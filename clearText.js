@@ -4,14 +4,15 @@ let sentence = data.replace(/[^a-zA-Z. ]/g, "");
 console.log(sentence);
 let words= sentence.split(' ');
 console.log(words.length);
-let count=0;
-for(let i =0; i<words.length; i++)
-{
-    if(words[i].length > 1)
-    {
-        count++;
-      }
-}
+
+// for(let i =0; i<words.length; i++)
+// {
+//     if(words[i].length > 1)
+//     {
+//         count++;
+//       }
+// }
+let count = words.reduce((Acc, word)=>{if(word.length>1) return Acc+1; return Acc;},0);
 
 console.log(`Total number of words excluding single character ${count}`);
 
